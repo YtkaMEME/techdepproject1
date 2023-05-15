@@ -1,0 +1,8 @@
+.MainPage{
+    min-width: 1920px;
+    min-height: 1080px;
+}
+
+button:focus  {
+    border:none;
+}

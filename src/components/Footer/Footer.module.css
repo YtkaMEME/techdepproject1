@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+
+.footerWrapp{
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+
+    min-width: 1920px;
+    min-height: 100px;
+
+    background: #1E1E1E;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 1400px;
+    height: 100px;
+
+    background: #1E1E1E;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+
+    width: 475.5px;
+    height: 34px;
+
+    margin: 33px 40px 33px 20px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    padding: 0px;
+
+    width: 329px;
+    height: 40px;
+}
+
+.copyright{
+
+}
+
+.info h4{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.info h4 p{
+    margin: 0;
+}
+
+.vk{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    flex-wrap: wrap;
+
+    width: 40px;
+    height: 40px;
+    margin: 0px 20px 0px 0px;
+
+    background: #ADFF00;
+    border: none;
+    border-radius: 8px;
+
+    padding: 11px 7.2px 12px 7.2px;
+}
+
+.instagram{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    flex-wrap: wrap;
+
+    width: 40px;
+    height: 40px;
+    margin: 0px 20px 0px 0px;
+
+    background: #ADFF00;
+    border: none;
+    border-radius: 8px;
+
+    padding: 11px 7.2px 12px 7.2px;
+}
+
+.feedback {
+    padding: 0px 6px 1px 6px;
+    width: 169px;
+    height: 32px;
+
+    background: #ADFF00;
+
+    border: none;
+    border-radius: 10px;
+}
+
+.feedback h4{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+
+    margin: 0;
+    color: #1E1E1E;
+}
