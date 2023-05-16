@@ -8,10 +8,10 @@ let Header = (props) => {
         <div className={pattern.headerWrapp}>
             <div className={pattern.logo}>
                 <img src={logo} alt='mainLogo'/>
-                <h1 className={pattern.h1}>онлайн-выборы Студенческого совета СПбГУТ</h1>
+                <h1 className={pattern.h1}>онлайн-выборы Лиги клубов СПбГУТ</h1>
                 <div className={pattern.typeButton}>
                     <NavLink to='/registration'>
-                        <button className={pattern.registration}>зарегистрироваться</button>
+                        <button className={pattern.registration}><h5>зарегистрироваться</h5></button>
                     </NavLink>
                 </div>
             </div>

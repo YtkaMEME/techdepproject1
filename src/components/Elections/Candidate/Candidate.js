@@ -1,7 +1,5 @@
 import React from 'react';
 import pattern from './Candidate.module.css'
-import logo from './img/vk.svg'
-
 
 let Candidate = (props) => {
     return (
@@ -9,11 +7,14 @@ let Candidate = (props) => {
             <img className={pattern.photo} src = {props.photo} alt='photoClub'/>
             <div className={pattern.text}>
                 <h4 className={pattern.name}>{props.name}</h4>
-                <button className={pattern.vk}><img src={logo} alt='VK'/></button>
+                <a href={props.vk} target = '_blank' rel="noreferrer">
+                    <button className={pattern.vk}><h5>ВКонтакте</h5></button>
+                </a>
             </div>
-            <div className={pattern.chekboxstyle}>
-                <input type='checkbox' className={pattern.chekbox}/>
-            </div>
+            <label className={pattern.check}>
+                <input type='checkbox' className={pattern.check_input} disabled/>
+                <span className={pattern.check_box}></span>
+            </label>
         </div>
     );
 }

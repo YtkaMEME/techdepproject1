@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
-.Candidate{
+
+.Candidate {
     display: flex;
 
     width: 1280px;
@@ -10,7 +11,7 @@
     margin-bottom: 20px;
 }
 
-.text{
+.text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -21,7 +22,11 @@
     height: 79px;
 }
 
-.photo{
+.text a {
+    text-decoration: none;
+}
+
+.photo {
     box-sizing: border-box;
 
     width: 100px;
@@ -33,7 +38,7 @@
     margin: 20px;
 }
 
-.name{
+.name {
     min-width: 193px;
     max-height: 29px;
 
@@ -46,14 +51,61 @@
     margin-bottom: 0;
 }
 
-.vk{
-    min-width: 40px;
-    min-height: 40px;
+.vk {
+    cursor: pointer;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+    min-width: 126px;
+    min-height: 33px;
 
     border: none;
     border-radius: 10px;
 
     background: #ADFF00;
     padding: 11px 7.2px 12px 7.2px;
+}
+
+.vk h5 {
+    margin: 0;
+    font-family: 'Golos Text', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+
+    color: #1E1E1E;
+}
+
+.check {
+    cursor: pointer;
+    margin: 50px 50px;
+}
+
+.check_input {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.check_box {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='2' width='36' height='36' rx='6' stroke='%23ADFF00' stroke-width='4'/%3E%3C/svg%3E%0A");
+}
+
+.check_input:checked + .check_box {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 0C3.58172 0 0 3.58172 0 8V32C0 36.4183 3.58172 40 8 40H32C36.4183 40 40 36.4183 40 32V8C40 3.58172 36.4183 0 32 0H8ZM32 13.5C32.8284 12.3954 32.6046 10.8284 31.5 10C30.3954 9.17157 28.8284 9.39543 28 10.5L17.7295 24.194L11.7678 18.2322C10.7915 17.2559 9.20854 17.2559 8.23223 18.2322C7.25592 19.2085 7.25592 20.7915 8.23223 21.7678L16.2322 29.7678C16.7447 30.2802 17.4543 30.5451 18.1772 30.4937C18.9001 30.4423 19.5652 30.0798 20 29.5L32 13.5Z' fill='%23ADFF00'/%3E%3C/svg%3E%0A");
+}
+
+.check_input:disabled:checked + .check_box {
+    cursor: default;
+}
+
+.check_input:disabled + .check_box {
+    cursor: default;
 }
 

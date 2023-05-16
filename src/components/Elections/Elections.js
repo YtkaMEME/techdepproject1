@@ -7,7 +7,8 @@ let Elections = (props) => {
         <Candidate photo = {item.photo} name = {item.name} vk = {item.vk}/>)
     return (
         <div className={pattern.Elections}>
-            <h1 className={pattern.titelElections}>Голосование</h1>
+            <h1 className={pattern.titelElections}>Голосование Конкурса студенческих клубов СПбГУТ · 4 сезон</h1>
+            <div className={pattern.timer}><h4>до конца осталось 3 часа 57 минут</h4></div>
             <div className={pattern.Candidates}>
                 {candidates}
             </div>

@@ -21,6 +21,10 @@
     height: 79px;
 }
 
+.text a{
+    text-decoration: none;
+}
+
 .photo{
     box-sizing: border-box;
 
@@ -47,14 +51,29 @@
 }
 
 .vk{
-    min-width: 40px;
-    min-height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+    min-width: 126px;
+    min-height: 33px;
 
     border: none;
     border-radius: 10px;
 
     background: #ADFF00;
     padding: 11px 7.2px 12px 7.2px;
+}
+
+.vk h5{
+    margin: 0;
+    font-family: 'Golos Text', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+
+    color: #1E1E1E;
 }
 
 .date{
