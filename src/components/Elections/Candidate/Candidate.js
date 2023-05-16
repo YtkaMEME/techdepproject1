@@ -11,9 +11,9 @@ let Candidate = (props) => {
                 <h4 className={pattern.name}>{props.name}</h4>
                 <button className={pattern.vk}><img src={logo} alt='VK'/></button>
             </div>
-            {/*<div className={pattern.chekboxstyle}>*/}
-            {/*    <input type='checkbox' className={pattern.chekbox}/>*/}
-            {/*</div>*/}
+            <div className={pattern.chekboxstyle}>
+                <input type='checkbox' className={pattern.chekbox}/>
+            </div>
         </div>
     );
 }

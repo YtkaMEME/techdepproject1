@@ -57,22 +57,3 @@
     padding: 11px 7.2px 12px 7.2px;
 }
 
-
-.chekbox {
-    width: 40px;
-    height: 40px;
-    margin: 0;
-    background: #111111;
-}
-
-.chekboxstyle{
-    width: 40px;
-    height: 40px;
-    left: calc(50% - 40px/2);
-    top: calc(50% - 40px/2);
-
-    border: 4px solid #ADFF00;
-    border-radius: 8px;
-
-    margin: 50px;
-}

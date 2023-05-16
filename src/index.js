@@ -2,14 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import state from "./Redux/state";
+import Registration from "./components/Registration/Registration";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App/>
+            <Routes>
+                <Route path='/registration' element={<Registration/>}/>
+                <Route path='*' element={<App state={state}/>}/>
+            </Routes>
         </BrowserRouter>
     </React.StrictMode>
 );

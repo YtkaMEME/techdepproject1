@@ -3,19 +3,14 @@ import Header from "./components/Header/Header";
 import Elections from "./components/Elections/Elections";
 import Winners from "./components/Winners/Winners";
 import Footer from "./components/Footer/Footer";
-import Registration from "./components/Registration/Registration";
-import {Route, Routes} from "react-router-dom";
 
-let App = () => {
+let App = (props) => {
     return (
         <div className="MainPage">
             <Header/>
-            <Elections/>
-            <Winners/>
+            <Elections candidatData = {props.state.MainPageData.CandidatData}/>
+            <Winners winnersData = {props.state.MainPageData.WinnersData}/>
             <Footer/>
-            <Routes>
-                <Route path='/registration' element={<Registration/>}/>
-            </Routes>
         </div>
     );
 }
