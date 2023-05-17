@@ -1,6 +1,6 @@
 .MainPage{
-    min-width: 1920px;
-    min-height: 1080px;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 button:focus  {

@@ -2,12 +2,12 @@
 .Candidate{
     display: flex;
 
-    width: 1280px;
+    width: 91.4%;
     max-height: 460px;
     background-color: #111111;
     border-radius: 20px;
 
-    margin-bottom: 20px;
+    margin: 0 auto 1.42%;
 }
 
 .text{
@@ -17,7 +17,7 @@
     padding: 0px;
     gap: 10px;
 
-    width: 1000px;
+    width: 78.125%;
     height: 79px;
 }
 
@@ -51,13 +51,15 @@
 }
 
 .vk{
+    cursor: pointer;
+
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
 
-    min-width: 126px;
-    min-height: 33px;
+    width: 126px;
+    height: 33px;
 
     border: none;
     border-radius: 10px;

@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
 
+:root{
+    font-size: 100vw;
+}
+
 .headerWrapp {
     background-color: #1E1E1E;
     min-height: 80px;
     max-height: 80px;
-    min-width: 1920px;
+    width: 100%;
 }
 
 .logo img {
@@ -16,7 +20,7 @@
     padding-bottom: 29px;
     padding-top: 29px;
     margin: 0;
-    font-size: 18px;
+    font-size: 0.9375%;
     color: #ffff;
     font-family: 'Golos Text', sans-serif;
 }
@@ -24,7 +28,7 @@
 .logo {
     margin: 0 auto;
     display: flex;
-    width: 1400px;
+    width: 73%
 }
 
 .registration {
@@ -32,8 +36,10 @@
 
     display: flex;
     flex-wrap: wrap;
+
     align-content: center;
     justify-content: center;
+
     width: 215px;
     height: 32px;
     background: #ADFF00;
@@ -41,7 +47,7 @@
     border-radius: 7px;
 }
 
-.registration h5{
+.registration h5 {
     margin: 0;
     font-family: 'Golos Text', sans-serif;
     font-weight: 600;
@@ -50,12 +56,14 @@
 
 }
 
-.typeButton{
+.typeButton {
     margin-left: auto;
     margin-right: 20px;
     margin-top: 24px;
 }
 
-.typeButton a{
+.typeButton a {
     text-decoration: none;
 }
+
+

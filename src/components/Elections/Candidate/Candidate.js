@@ -12,7 +12,7 @@ let Candidate = (props) => {
                 </a>
             </div>
             <label className={pattern.check}>
-                <input type='checkbox' className={pattern.check_input} disabled/>
+                <input type='checkbox' className={pattern.check_input}/>
                 <span className={pattern.check_box}></span>
             </label>
         </div>
