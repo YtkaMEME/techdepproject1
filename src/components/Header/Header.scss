@@ -11,6 +11,9 @@
     @include media(height, [60px, 80px]);
 
     background-color: #1e1e1e;
+    box-shadow: 0 0 7px black; // чтобы не сливался с блоками того же backoground-цвета
+
+    z-index: 5;
 
     &__inner-wrapper {
         display: flex;

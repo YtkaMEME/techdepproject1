@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+@import '/src/media-mixin';
+
+.elections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+
+    &__inner-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 80%;
+        padding: 60px;
+        box-sizing: border-box;
+
+        border-radius: 20px;
+        background-color: #1e1e1e;
+    }
+
+    &__title {
+        text-align: center;
+        color: #ffffff;
+
+        font-size: 1.5rem;
+    }
+
+    &__timer {
+        @include media(margin-top, [6px, 6px, 6px, 10px]);
+
+        color: #aaaaaa;
+    }
+
+    &__candidates {
+        width: 100%;
+        @include media(margin-top, [20px, 20px, 20px, 40px]);
+    }
+
+    &__warning {
+        @include media(margin-top, [20px, 20px, 20px, 40px]);
+
+        color: #aaaaaa;
+    }
+}
