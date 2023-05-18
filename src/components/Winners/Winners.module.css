@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
-:root{
-    font-size: 100vw;
-}
+
 .Winners{
     width: 73%;
     min-height: 663px;
@@ -17,7 +15,7 @@
 .titelWinners{
     margin: 60px 60px 40px 60px;
     color: #ffff;
-    font-family: 'Golos Text', sans-serif;
+
     font-size: 1.875%;
 }
 
