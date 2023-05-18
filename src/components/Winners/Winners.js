@@ -7,7 +7,7 @@ let Winners = (props) => {
         <Winner photo={item.photo} name={item.name} vk={item.vk} data={item.data}/>)
     return (
         <div className={pattern.Winners}>
-            <h1 className={pattern.titelWinners}>Победители</h1>
+            <h1 className={pattern.titelWinners}>Победители прошлых сезонов</h1>
             {winner}
         </div>
     );

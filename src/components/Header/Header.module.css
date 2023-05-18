@@ -5,6 +5,8 @@
 }
 
 .headerWrapp {
+    position: fixed;
+    top: 0;
     background-color: #1E1E1E;
     min-height: 80px;
     max-height: 80px;
@@ -52,8 +54,8 @@
     font-family: 'Golos Text', sans-serif;
     font-weight: 600;
     font-size: 18px;
-    line-height: 21.6px;
-
+    line-height: 22px;
+    color: #1E1E1E;
 }
 
 .typeButton {
@@ -66,4 +68,43 @@
     text-decoration: none;
 }
 
+@media screen and (max-width: 1024px){
+    .headerWrapp{
+        position: unset;
+
+        margin: 0 auto;
+        width: 100%;
+        max-height: 60px;
+        min-height: 60px;
+    }
+    .h1{
+        display: none;
+    }
+    .logo{
+        width: 81.25%;
+        justify-content: center;
+    }
+    .logo img{
+        padding: 10px 0 10px 10px;
+    }
+    .registration{
+        border-radius: 10px;
+        width: 148px;
+        height: 24px;
+        padding: 8px 12px;
+    }
+    .typeButton{
+        margin: 18px 10px 18px 52px;
+    }
+    .registration h5{
+        display: flex;
+        align-items: center;
+        width: 124px;
+        height: 8px;
+
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 120%;
+    }
+}
 

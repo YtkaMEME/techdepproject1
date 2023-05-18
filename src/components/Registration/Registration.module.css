@@ -1,15 +1,56 @@
-.registrationPage{
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
 
+.registrationPage{
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+
+    position: relative;
+    width: 480px;
+    height: 482px;
+
+    background: #1E1E1E;
+
+    border: 2px solid #363636;
+    border-radius: 20px;
 }
 
 .registration{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
 
+    width: 231px;
+    height: 43px;
 }
 
 .h1{
-    color: #ffffff;
+    width: 231px;
+    height: 43px;
+
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 120%;
+
+    color: #FFFFFF;
+
+    margin: 0;
 }
 
 .forms{
+    color: white;
+    width: 400px;
+    height: 172px;
+}
 
+.forms div{
+    height: 49px;
 }

@@ -21,4 +21,23 @@
     font-size: 1.875%;
 }
 
+/*320px*/
+@media screen and (max-width: 1024px){
+    .Winners{
+        width: 260px;
+        height: 1098px;
+        padding: 0;
+        margin: 20px auto;
+    }
+    .titelWinners{
+        margin: 20px auto 0;
+        width: 220px;
+        height: 57px;
 
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+
+        text-align: center;
+    }
+}

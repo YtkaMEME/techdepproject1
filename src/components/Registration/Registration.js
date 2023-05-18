@@ -5,9 +5,22 @@ let Registration = (props) => {
         <div className={pattern.registrationPage}>
             <div className={pattern.registration}>
                 <h1 className={pattern.h1}>Регистрация</h1>
-                <div className={pattern.forms}>
-
-                </div>
+                <form >
+                    <div>
+                        <input placeholder={"Logins"}/>
+                    </div>
+                    <div>
+                        <input placeholder={"Password"}/>
+                    </div>
+                    <div>
+                        <input type={"checkbox"}/>
+                        <h5>соглашаюсь на обработку
+                        персональных данных</h5>
+                    </div>
+                    <div>
+                        <button>Готово</button>
+                    </div>
+                </form>
             </div>
         </div>
     );

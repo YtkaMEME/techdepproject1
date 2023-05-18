@@ -88,13 +88,11 @@
 }
 
 .check_input {
-    position: absolute;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
 .check_box {
-    position: absolute;
     width: 40px;
     height: 40px;
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='2' width='36' height='36' rx='6' stroke='%23ADFF00' stroke-width='4'/%3E%3C/svg%3E%0A");
@@ -110,5 +108,60 @@
 
 .check_input:disabled + .check_box {
     cursor: default;
+}
+
+/*320px*/
+@media screen and (max-width: 1024px){
+    .Candidate{
+        position: relative;
+        width: 84.61%;
+        height: 26.85%;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .photo{
+        display: flex;
+        justify-content: center;
+
+        width: 190px;
+        height: 190px;
+        margin: 15px;
+    }
+    .text{
+        margin: 0 15px 15px 15px;
+        width: 190px;
+        height: 51px;
+    }
+    .name{
+        margin: 0;
+        min-width: 129px;
+        max-height: 19px;
+
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .vk{
+        width: 88px;
+        height: 24px;
+    }
+    .vk h5{
+        font-size: 12px;
+    }
+    .check_box{
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='2' width='24' height='24' rx='6' stroke='%23ADFF00' stroke-width='4'/%3E%3C/svg%3E%0A");
+    }
+    .check_input:checked + .check_box {
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 0C3.58172 0 0 3.58172 0 8V20C0 24.4183 3.58172 28 8 28H20C24.4183 28 28 24.4183 28 20V8C28 3.58172 24.4183 0 20 0H8ZM21.8199 7.33343C22.571 7.88571 22.7232 8.93037 22.1599 9.66675L14 20.3333C13.7043 20.7199 13.252 20.9615 12.7605 20.9958C12.2689 21.0301 11.7864 20.8535 11.4379 20.5118L5.99792 15.1785C5.33403 14.5277 5.33403 13.4724 5.99792 12.8215C6.6618 12.1707 7.73818 12.1707 8.40206 12.8215L12.456 16.796L19.4399 7.66676C20.0032 6.93039 21.0688 6.78115 21.8199 7.33343Z' fill='%23ADFF00'/%3E%3C/svg%3E%0A");
+    }
+    .check{
+        margin: 0;
+        position: absolute;
+        top: 9.2254%;
+        left: 75.92%;
+    }
+
 }
 

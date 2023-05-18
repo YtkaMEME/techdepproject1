@@ -4,8 +4,9 @@ import logo from './img/logo.svg'
 import {NavLink} from "react-router-dom";
 
 let Header = (props) => {
+
     return (
-        <div className={pattern.headerWrapp}>
+        <div className={pattern.headerWrapp} id='header'>
             <div className={pattern.logo}>
                 <img src={logo} alt='mainLogo'/>
                 <h1 className={pattern.h1}>онлайн-выборы Лиги клубов СПбГУТ</h1>
