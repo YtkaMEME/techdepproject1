@@ -7,7 +7,7 @@ let state = {
         CandidatData: [
             {
                 photo: 'https://sun6-23.userapi.com/s/v1/if1/ev2bwfrmgCPZFYZXg_z3LAHSXRBPzXKUomlZrzp57hb9kuI6KabcKoHq0ECcaaSzt9olAPov.jpg?size=2017x2017&quality=96&crop=71,71,2017,2017&ava=1',
-                name: 'Название клуба',
+                name: 'Невроятнно длинное название клуба, проживающего в Бонч-Бруевича.',
                 vk: 'https://vk.com/rhymes',
                 disabled: 'true',
                 checked: ''

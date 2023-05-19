@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Candidate from './Candidate/Candidate';
+import Candidate from '../Candidate/Candidate';
 import './Elections.scss';
 
 const ELECTIONS_END = new Date('2023-07-20'); // незн какое на самом деле

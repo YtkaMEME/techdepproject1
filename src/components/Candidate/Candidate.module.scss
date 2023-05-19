@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
+@import '/src/media-mixin';
+
+// переход в мобильный дизайн: 800px (до этого хватает резиновой верстки)
+
+.Candidate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    margin-bottom: 20px;
+    padding: 20px;
+
+    background-color: #111111;
+    border-radius: 20px;
+
+    @media screen and (max-width: 800px) {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.leftPlate {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    @media screen and (max-width: 800px) {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.text a {
+    text-decoration: none;
+}
+
+.photoWrapper {
+    position: relative;
+
+    flex-shrink: 0;
+
+    border: 2px solid #adff00;
+    border-radius: 10px;
+
+    margin-right: 20px;
+
+    overflow: hidden;
+
+    @media screen and (max-width: 800px) {
+        margin-right: 0;
+    }
+}
+.photo {
+    display: block;
+    width: 100px;
+
+    @media screen and (max-width: 800px) {
+        width: 220px;
+        max-width: 100%;
+    }
+}
+
+.name {
+    display: block;
+    margin-bottom: 8px; // для margin display должен быть block (возможно inline-block тоже)
+
+    font-size: 1rem;
+    color: #ffffff;
+
+    @media screen and (max-width: 800px) {
+        margin-top: 16px;
+        margin-bottom: 8px;
+
+        font-size: 16px;
+    }
+}
+
+.vk {
+    cursor: pointer;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #adff00;
+
+    font-weight: 600;
+    font-size: 18px;
+    color: #1e1e1e;
+
+    @media screen and (max-width: 800px) {
+        font-size: 12px;
+    }
+}
+
+.check {
+    display: flex;
+    align-items: flex-start;
+    justify-items: center;
+
+    margin-left: 20px;
+
+    cursor: pointer;
+
+    @media screen and (max-width: 800px) {
+        position: absolute;
+
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.check_input {
+    display: none;
+}
+
+.check_box {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='2' width='36' height='36' rx='6' stroke='%23ADFF00' stroke-width='4'/%3E%3C/svg%3E%0A");
+}
+
+.check_input:checked + .check_box {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 0C3.58172 0 0 3.58172 0 8V32C0 36.4183 3.58172 40 8 40H32C36.4183 40 40 36.4183 40 32V8C40 3.58172 36.4183 0 32 0H8ZM32 13.5C32.8284 12.3954 32.6046 10.8284 31.5 10C30.3954 9.17157 28.8284 9.39543 28 10.5L17.7295 24.194L11.7678 18.2322C10.7915 17.2559 9.20854 17.2559 8.23223 18.2322C7.25592 19.2085 7.25592 20.7915 8.23223 21.7678L16.2322 29.7678C16.7447 30.2802 17.4543 30.5451 18.1772 30.4937C18.9001 30.4423 19.5652 30.0798 20 29.5L32 13.5Z' fill='%23ADFF00'/%3E%3C/svg%3E%0A");
+}
+
+.check_input:disabled:checked + .check_box {
+    cursor: default;
+}
+
+.check_input:disabled + .check_box {
+    cursor: default;
+}
+
+.winInfo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+
+    @media screen and (max-width: 800px) {
+        align-self: center;
+
+        margin-bottom: 16px;
+
+        font-size: 16px;
+    }
+}
