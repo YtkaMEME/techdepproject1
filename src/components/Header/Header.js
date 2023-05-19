@@ -1,24 +1,26 @@
 import React from 'react';
-import pattern from './Header.module.css'
-import logo from './img/logo.svg'
-import {NavLink} from "react-router-dom";
 
-let Header = (props) => {
+import { LogoIcon } from './LogoIcon';
 
+import './Header.scss';
+
+const Header = ({ showRegistrationModal }) => {
     return (
-        <div className={pattern.headerWrapp} id='header'>
-            <div className={pattern.logo}>
-                <img src={logo} alt='mainLogo'/>
-                <h1 className={pattern.h1}>онлайн-выборы Лиги клубов СПбГУТ</h1>
-                <div className={pattern.typeButton}>
-                    <NavLink to='/registration'>
-                        <button className={pattern.registration}><h5>зарегистрироваться</h5></button>
-                    </NavLink>
+        <div className="header">
+            <div className="header__inner-wrapper">
+                <div className="header__logo-wrapper">
+                    <LogoIcon />
+                    <h1 className="header__logo-text">Онлайн-выборы Лиги клубов СПбГУТ</h1>
+                </div>
+
+                <div className="header__button-wrapper">
+                    <button className="header__button" onClick={showRegistrationModal}>
+                        зарегистрироваться
+                    </button>
                 </div>
             </div>
         </div>
     );
 }
 
-
-export default Header
+export default Header;

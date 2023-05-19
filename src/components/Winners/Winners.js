@@ -1,17 +1,23 @@
 import React from 'react';
-import pattern from './Winners.module.css'
-import Winner from "./Winner/Winner";
+import Winner from '../Candidate/Candidate';
+
+import '../Elections/Elections.scss';
 
 let Winners = (props) => {
-    let winner = props.winnersData.map((item) =>
-        <Winner photo={item.photo} name={item.name} vk={item.vk} data={item.data}/>)
+    let winners = props.winnersData.map((item) => (
+        <Winner photo={item.photo} name={item.name} vk={item.vk} winInfo={item.data} />
+    ));
+
+    // тк блок дублирует верстку кандидатов, то просто используем те же стили и классы
     return (
-        <div className={pattern.Winners}>
-            <h1 className={pattern.titelWinners}>Победители прошлых сезонов</h1>
-            {winner}
+        <div className="elections">
+            <div className="elections__inner-wrapper">
+                <h1 className="elections__title">Победители прошлых сезонов</h1>
+
+                <div className="elections__candidates">{winners}</div>
+            </div>
         </div>
     );
-}
+};
 
-
-export default Winners
+export default Winners;

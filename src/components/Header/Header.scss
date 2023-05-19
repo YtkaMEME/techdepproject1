@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
+@import "/src/media-mixin";
+
+.header {
+    display: flex;
+    justify-content: center;
+
+    top: 0;
+    position: sticky;
+
+    @include media(height, [60px, 80px]);
+
+    background-color: #1e1e1e;
+    box-shadow: 0 0 7px black; // чтобы не сливался с блоками того же backoground-цвета
+
+    z-index: 5;
+
+    &__inner-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media(width, [92%, 92%, 80%]);
+    }
+
+    &__logo-wrapper {
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 40px;
+            padding: 20px;
+        }
+    }
+
+    &__logo-text {
+        font-size: 0.75rem;
+        color: #ffff;
+
+        @include media(display, [none, block])
+    }
+
+    &__button-wrapper {
+        margin-right: 20px;
+    }
+
+    &__button {
+        cursor: pointer;
+
+        padding: 8px 12px;
+        background: #adff00;
+        border: none;
+        border-radius: 7px;
+
+        font-weight: 600;
+        @include media(font-size, [12px, 14px, 18px])
+    }
+}

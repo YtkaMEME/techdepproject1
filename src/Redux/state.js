@@ -7,7 +7,7 @@ let state = {
         CandidatData: [
             {
                 photo: 'https://sun6-23.userapi.com/s/v1/if1/ev2bwfrmgCPZFYZXg_z3LAHSXRBPzXKUomlZrzp57hb9kuI6KabcKoHq0ECcaaSzt9olAPov.jpg?size=2017x2017&quality=96&crop=71,71,2017,2017&ava=1',
-                name: 'Название клуба',
+                name: 'Невроятнно длинное название клуба, проживающего в Бонч-Бруевича.',
                 vk: 'https://vk.com/rhymes',
                 disabled: 'true',
                 checked: ''
@@ -56,7 +56,7 @@ export const subscribe = (rerenderAllTree) => {
 }
 
 export const updateCheckbox = (value) => {
-    state.MainPageData.CandidatData.map((item) => {
+    state.MainPageData.CandidatData.forEach((item) => {
         if (item.vk === value) {
             if (item.checked === '') {
                 item.checked = 'true';
@@ -80,7 +80,7 @@ const undisable = () => {
         }
     })
     if (unchecked===state.MainPageData.CandidatData.length){
-        state.MainPageData.CandidatData.map((item)=>{
+        state.MainPageData.CandidatData.forEach((item)=>{
             item.disabled = '';
         })
     }

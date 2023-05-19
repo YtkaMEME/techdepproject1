@@ -1,5 +1,16 @@
-body {
+@import './media-mixin.scss';
+
+* {
   margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Golos Text', sans-serif;
+  @include media(font-size, [10px, 16px, 24px]);
+}
+
+body {
   background-color: #111111;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,4 +21,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button:focus  {
+  border:none;
 }

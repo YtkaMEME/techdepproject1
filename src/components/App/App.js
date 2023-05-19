@@ -1,15 +1,17 @@
 import './App.css';
-import Header from "./components/Header/Header";
-import Elections from "./components/Elections/Elections";
-import Winners from "./components/Winners/Winners";
-// import Footer from "./components/Footer/Footer";
+import Header from "../Header/Header";
+import Elections from "../Elections/Elections";
+import Winners from "../Winners/Winners";
+import RegistrationModal from "../Registration/Registration";
+import React from "react";
 
-let App = (props) => {
+const App = (props) => {
     return (
         <div className="MainPage">
             <Header/>
             <Elections candidatData = {props.state.MainPageData.CandidatData} updateCheckbox={props.updateCheckbox}/>
             <Winners winnersData = {props.state.MainPageData.WinnersData}/>
+            <RegistrationModal/>
             {/*<Footer/>*/}
         </div>
     );
