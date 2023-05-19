@@ -40,6 +40,8 @@ const Elections = (props) => {
     // Незн с чем связано, по идее должны обновляться только та часть, в которой изменились пропсы (ток чекбоксы)
     // Можно попробовать не передавать сразу в кандидата checkbox-пропсы, а вычислять их в <Checkbox />
     // Возможно что это проблемы со стейтом, если он обновляет сразу все поля (я не увидел что редакс используется)
+
+    // UPD: это заметно только если включен disable-cache в dev-tools, ничего такого
     const candidates = props.candidatData.map((item) => (
         <Candidate photo={item.photo} name={item.name} vk={item.vk} disabled={item.disabled}
                    checked={item.checked} updateCheckbox={props.updateCheckbox} key={item.vk} />));
