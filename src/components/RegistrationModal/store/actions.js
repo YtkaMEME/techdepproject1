@@ -1,8 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     modalShown: false,
-}
+
+    sendCodeStatus: 'unsent',
+    checkCodeStatus: 'unsent',
+
+    approvedEmail: null,
+};
 
 const counterSlice = createSlice({
     name: 'registration',
@@ -18,7 +23,31 @@ const counterSlice = createSlice({
         closeModal: (state) => {
             state.modalShown = false;
         },
+
+        sendCodeRequest: (state, { email }) => {
+            state.sendCodeStatus = 'pending';
+            // saga
+        },
+        sendCodeSuccess: (state) => {
+            state.sendCodeStatus = 'success';
+        },
+        sendCodeError: (state) => {
+            state.sendCodeStatus = 'error';
+        },
+
+        checkCodeRequest: (state, { email, code }) => {
+            state.checkCodeStatus = 'pending';
+            // saga
+        },
+        checkCodeSuccess: (state, { email }) => {
+            state.checkCodeStatus = 'success';
+
+            state.approvedEmail = email;
+        },
+        checkCodeError: (state) => {
+            state.checkCodeStatus = 'error';
+        },
     },
-})
+});
 
 export const { actions, reducer } = counterSlice;

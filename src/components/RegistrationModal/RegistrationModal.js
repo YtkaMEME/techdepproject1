@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getModalShown } from './store/selectors';
+import { stopScroll, enableScroll } from '../../utils/stopScroll';
+
+import { getSendCodeStatus, getCheckCodeStatus } from './store/selectors';
 import { actions } from './store/actions';
 
 import './RegistrationModal.scss';
 
 const RegistrationModal = () => {
     const dispatch = useDispatch();
-    const modalShown = useSelector(getModalShown);
+
+    const sendCodeStatus = useSelector(getSendCodeStatus);
+    const checkCodeStatus = useSelector(getCheckCodeStatus);
 
     const [email, setEmail] = useState('');
     const [code, setCode] = useState('');
@@ -23,11 +27,15 @@ const RegistrationModal = () => {
         return () => window.removeEventListener('keydown', close);
     }, [dispatch]);
 
-    if (!modalShown) {
-        return null;
-    }
+    useEffect(() => {
+        stopScroll();
+
+        return enableScroll;
+    }, []);
 
     const closeModal = () => dispatch(actions.closeModal());
+    const sendCodeRequest = (event) => dispatch(actions.sendCodeRequest({ email }));
+    const checkCodeRequest = (event) => dispatch(actions.checkCodeRequest({ code }));
 
     return (
         <div className="modal-wrapper">
@@ -59,7 +67,11 @@ const RegistrationModal = () => {
                                     placeholder="mail@ya.ru"
                                     onChange={(e) => setEmail(e.currentTarget.value)}
                                 />
-                                <button className="form__send-code-button registration-modal__button" disabled={!email}>
+                                <button
+                                    className="form__send-code-button registration-modal__button"
+                                    disabled={!email || sendCodeStatus === 'pending'}
+                                    onClick={sendCodeRequest}
+                                >
                                     отправть код
                                 </button>
                             </div>
@@ -78,7 +90,8 @@ const RegistrationModal = () => {
 
                     <button
                         className="registration-modal__button registration-modal__submit-btn"
-                        disabled={!code || !email}
+                        disabled={!code || !email || checkCodeStatus === 'pending'}
+                        onClick={checkCodeRequest}
                     >
                         Готово
                     </button>
