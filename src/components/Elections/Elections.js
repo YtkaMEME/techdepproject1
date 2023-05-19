@@ -4,7 +4,8 @@ import Candidate from "./Candidate/Candidate";
 
 let Elections = (props) => {
     let candidates = props.candidatData.map((item) =>
-        <Candidate photo={item.photo} name={item.name} vk={item.vk}/>)
+        <Candidate photo={item.photo} name={item.name} vk={item.vk} disabled={item.disabled}
+                   checked={item.checked} updateCheckbox={props.updateCheckbox}/>)
     return (
         <div className={pattern.Elections}>
             <h1 className={pattern.titelElections}>Голосование Конкурса студенческих клубов СПбГУТ · 4 сезон</h1>

@@ -2,6 +2,13 @@ import React from 'react';
 import pattern from './Candidate.module.css'
 
 let Candidate = (props) => {
+
+    let checkboxRef = React.createRef()
+
+    let ChangeCheckbox = () => {
+        props.updateCheckbox(checkboxRef.current.value);
+    }
+
     return (
         <div className={pattern.Candidate}>
             <img className={pattern.photo} src = {props.photo} alt='photoClub'/>
@@ -12,7 +19,8 @@ let Candidate = (props) => {
                 </a>
             </div>
             <label className={pattern.check}>
-                <input type='checkbox' className={pattern.check_input}/>
+                <input type='checkbox' className={pattern.check_input} ref={checkboxRef}
+                       onClick={ChangeCheckbox} value={props.vk} disabled={props.disabled} defaultChecked={props.checked}/>
                 <span className={pattern.check_box}></span>
             </label>
         </div>
