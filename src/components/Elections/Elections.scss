@@ -13,7 +13,7 @@
         flex-direction: column;
         align-items: center;
 
-        @include media(width, [260px, 260px, 80%]);
+        @include media(width, [92%, 92%, 80%]);
         @include media(padding, [20px, 20px, 60px]);
         box-sizing: border-box;
 
@@ -36,8 +36,17 @@
     }
 
     &__candidates {
+        @media screen and (max-width: 800px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            margin-top: 20px;
+            margin-right: -12px; // тк есть отступы между кандидатами в 12px
+        }
+
         width: 100%;
-        @include media(margin-top, [20px, 20px, 20px, 40px]);
+        margin-top: 40px;
     }
 
     &__warning {

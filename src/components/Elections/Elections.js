@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Candidate from '../Candidate/Candidate';
 import './Elections.scss';
 
-const ELECTIONS_END = new Date('2023-07-20'); // незн какое на самом деле
+const ELECTIONS_END = new Date('2023-07-20'); // надо сюда проставить настоящее время окончания выборов
 
 // стоит проверить краевые случаи (особенно переход из часа к часу)
 const getRemainedMinutes = () => {
@@ -34,8 +34,12 @@ const Elections = (props) => {
             setHours(getRemainedHours());
             setMinutes(getRemainedMinutes());
         }, 20 * 1000);
-    }, [isElectionsEnded]); // здесь пустой массив, чтобы эффект случился только при первом рендере
+    }, []); // здесь пустой массив, чтобы эффект случился только при первом рендере
 
+    // Есть сильные проблемы с перерендером картинки, если кликать на чек-бокс.
+    // Незн с чем связано, по идее должны обновляться только та часть, в которой изменились пропсы (ток чекбоксы)
+    // Можно попробовать не передавать сразу в кандидата checkbox-пропсы, а вычислять их в <Checkbox />
+    // Возможно что это проблемы со стейтом, если он обновляет сразу все поля (я не увидел что редакс используется)
     const candidates = props.candidatData.map((item) => (
         <Candidate photo={item.photo} name={item.name} vk={item.vk} disabled={item.disabled}
                    checked={item.checked} updateCheckbox={props.updateCheckbox} key={item.vk} />));

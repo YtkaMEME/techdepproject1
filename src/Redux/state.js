@@ -56,7 +56,7 @@ export const subscribe = (rerenderAllTree) => {
 }
 
 export const updateCheckbox = (value) => {
-    state.MainPageData.CandidatData.map((item) => {
+    state.MainPageData.CandidatData.forEach((item) => {
         if (item.vk === value) {
             if (item.checked === '') {
                 item.checked = 'true';
@@ -80,7 +80,7 @@ const undisable = () => {
         }
     })
     if (unchecked===state.MainPageData.CandidatData.length){
-        state.MainPageData.CandidatData.map((item)=>{
+        state.MainPageData.CandidatData.forEach((item)=>{
             item.disabled = '';
         })
     }
