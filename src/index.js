@@ -6,16 +6,21 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import state, {subscribe, updateCheckbox} from "./Redux/state";
 
-let rerenderAllTree =  () => {
+import { store } from './Redux/store';
+import { Provider } from 'react-redux';
+
+let rerenderAllTree = () => {
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
-            <BrowserRouter>
-                <Routes>
-                    <Route path='*' element={<App state={state} updateCheckbox={updateCheckbox}/>}/>
-                </Routes>
-            </BrowserRouter>
-        </React.StrictMode>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="*" element={<App state={state} updateCheckbox={updateCheckbox} />} />
+                    </Routes>
+                </BrowserRouter>
+            </Provider>
+        </React.StrictMode>,
     );
 
     reportWebVitals();

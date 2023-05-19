@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
-@import "/src/media-mixin";
+@import '/src/media-mixin';
 
 .header {
     display: flex;
@@ -37,7 +37,7 @@
         font-size: 0.75rem;
         color: #ffff;
 
-        @include media(display, [none, block])
+        @include media(display, [none, block]);
     }
 
     &__button-wrapper {
@@ -53,6 +53,10 @@
         border-radius: 7px;
 
         font-weight: 600;
-        @include media(font-size, [12px, 14px, 18px])
+        @include media(font-size, [12px, 14px, 18px]);
+
+        &:active {
+            transform: scale(0.98);
+        }
     }
 }
