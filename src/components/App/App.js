@@ -16,7 +16,7 @@ const App = (props) => {
         <>
             <div className="MainPage">
                 <Header />
-                <Elections candidatData={props.state.MainPageData.CandidatData} updateCheckbox={props.updateCheckbox} />
+                <Elections/>
                 <Winners winnersData={props.state.MainPageData.WinnersData} />
             </div>
             {modalShown && <RegistrationModal />}

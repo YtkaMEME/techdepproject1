@@ -3,6 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import { reducer as registrationReducer } from '../components/RegistrationModal/store/actions';
 import { registrationWatcher } from '../components/RegistrationModal/store/saga';
+import {reducer as electionsReducer} from '../components/Elections/store/actions'
 
 // В сагах делаются запросы к бэку или фронтовому серверу (если таковой есть)
 // Делаем запросы именно из саг, а не просто из кода,
@@ -14,6 +15,7 @@ const sagaMiddleware = createSagaMiddleware();
 export const store = configureStore({
     reducer: {
         registration: registrationReducer,
+        candidate: electionsReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
 });

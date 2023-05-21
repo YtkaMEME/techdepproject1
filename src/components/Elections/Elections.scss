@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap');
 @import '/src/media-mixin';
 
 .elections {
@@ -54,4 +55,37 @@
 
         color: #aaaaaa;
     }
+    &__votebutton{
+        cursor: pointer;
+
+
+        margin-top: 31px;
+
+        width: 316px;
+        height: 57px;
+
+        background: #ADFF00;
+
+        border: none;
+        border-radius: 20px;
+
+        font-family: 'Golos Text', sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 120%;
+
+        @media screen and (max-width: 800px) {
+            width: 166px;
+            height: 33px;
+            margin-top: 20px;
+
+            font-size: 18px;
+        }
+    }
+    &__votebutton:disabled{
+        cursor: not-allowed;
+        background: #363636;
+        color: #1E1E1E;
+    }
+
 }

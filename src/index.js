@@ -4,7 +4,7 @@ import './index.scss';
 import App from './components/App/App.js';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import state, {subscribe, updateCheckbox} from "./Redux/state";
+import state from "./Redux/state";
 
 import { store } from './Redux/store';
 import { Provider } from 'react-redux';
@@ -16,7 +16,7 @@ let rerenderAllTree = () => {
             <Provider store={store}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="*" element={<App state={state} updateCheckbox={updateCheckbox} />} />
+                        <Route path="*" element={<App state={state}/>} />
                     </Routes>
                 </BrowserRouter>
             </Provider>
@@ -26,5 +26,4 @@ let rerenderAllTree = () => {
     reportWebVitals();
 }
 
-subscribe(rerenderAllTree);
 rerenderAllTree();

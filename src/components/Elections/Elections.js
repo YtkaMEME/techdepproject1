@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Candidate from '../Candidate/Candidate';
 import './Elections.scss';
+import {useDispatch, useSelector} from "react-redux";
+import {actions} from "./store/actions";
 
 const ELECTIONS_END = new Date('2023-07-20'); // надо сюда проставить настоящее время окончания выборов
 
@@ -15,7 +17,7 @@ const getRemainedHours = () => {
     return Math.max(0, Math.floor(remainTime / 1000 / 60 / 60));
 };
 
-const Elections = (props) => {
+const Elections = () => {
     const [isElectionsEnded, setIsElectionsEnded] = useState(new Date() > ELECTIONS_END);
 
     const [hours, setHours] = useState(getRemainedHours());
@@ -42,9 +44,13 @@ const Elections = (props) => {
     // Возможно что это проблемы со стейтом, если он обновляет сразу все поля (я не увидел что редакс используется)
 
     // UPD: это заметно только если включен disable-cache в dev-tools, ничего такого
-    const candidates = props.candidatData.map((item) => (
+
+
+    const c = useSelector(state => state.candidate.candidate)
+
+    const candidates = c.map((item) => (
         <Candidate photo={item.photo} name={item.name} vk={item.vk} disabled={item.disabled}
-                   checked={item.checked} updateCheckbox={props.updateCheckbox} key={item.vk} />));
+                   checked={item.checked} id={item.id}/>));
 
     let timerText;
     if (isElectionsEnded) {
@@ -60,7 +66,7 @@ const Elections = (props) => {
         )}`;
     }
 
-    const isRegistrated = false;
+    const isRegistrated = true;
 
     return (
         <div className="elections">
@@ -71,10 +77,21 @@ const Elections = (props) => {
                 <div className="elections__candidates">{candidates}</div>
 
                 {!isRegistrated && <span className="elections__warning">сначала надо зарегистрироваться</span>}
+                {isRegistrated && <ButtonVote/>}
             </div>
         </div>
     );
 };
+
+let ButtonVote = () => {
+    const dispatch = useDispatch();
+    const voteButton = useSelector(state=> state.voteButton)
+    return (
+        <button className="elections__votebutton" onClick={() => dispatch(actions.votecounte())} disabled={voteButton}>
+            проголосовать
+        </button>
+    )
+}
 
 function getNoun(number, one, two, five) {
     let n = Math.abs(number);

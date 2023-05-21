@@ -1,10 +1,12 @@
 import React from 'react';
 import { useMedia } from 'react-use';
+import {actions} from "../Elections/store/actions";
 
 import pattern from './Candidate.module.scss';
+import {useDispatch} from "react-redux";
 
 const Candidate = (props) => {
-    const { photo, name, vk, winInfo, ...checkboxProps } = props;
+    const { photo, name, vk, winInfo, id, ...checkboxProps } = props;
 
     const isSmallScreen = useMedia('(max-width: 800px)');
 
@@ -16,7 +18,7 @@ const Candidate = (props) => {
             <div className={pattern.leftPlate}>
                 <div className={pattern.photoWrapper}>
                     <img className={pattern.photo} src={photo} alt="photoClub" />
-                    {isSmallScreen && !winInfo && <CheckBox vk={vk} {...checkboxProps} />}
+                    {isSmallScreen && !winInfo && <CheckBox id = {id} {...checkboxProps} />}
                 </div>
                 <div className={pattern.text}>
                     <h4 className={pattern.name}>{name}</h4>
@@ -27,29 +29,24 @@ const Candidate = (props) => {
             </div>
 
             {!isSmallScreen && winInfo && <span className={pattern.winInfo}>{winInfo}</span>}
-            {!isSmallScreen && !winInfo && <CheckBox vk={vk} {...checkboxProps} />}
+            {!isSmallScreen && !winInfo && <CheckBox id = {id} {...checkboxProps} />}
         </div>
     );
 };
 
 export default Candidate;
 
-function CheckBox({ updateCheckbox, vk, disabled, checked }) {
-    const checkboxRef = React.createRef();
+function CheckBox({ disabled, checked, id }) {
 
-    const ChangeCheckbox = () => {
-        updateCheckbox(checkboxRef.current.value);
-    };
+    const dispatch = useDispatch()
 
     return (
         <label className={pattern.check}>
             <input
                 type="checkbox"
                 className={pattern.check_input}
-                ref={checkboxRef}
-                onClick={ChangeCheckbox}
-                value={vk}
-                disabled={false}
+                onChange={()=>dispatch(actions.updateCheckbox({id}))}
+                disabled={disabled}
                 defaultChecked={checked}
             />
             <span className={pattern.check_box}></span>
